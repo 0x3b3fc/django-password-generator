@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+
+    <title>Password Generator | Django</title>
+</head>
+<body>
+
+<br><br>
+    <div class="container">
+        <div class="card">
+            <div class="card-header text-center">
+                <h1>Password Generator</h1>
+            </div>
+            <div class="card-body">
+                <form action="{% url 'password' %}" method="get">
+                     {% csrf_token %}
+                    <select name="length" class="form-select">
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10" selected="selected">10</option>
+                        <option value="11">11</option>
+                        <option value="12">12</option>
+                        <option value="13">13</option>
+                        <option value="14">14</option>
+                    </select>
+                    <br>
+
+                    <input type="checkbox" name="uppercase" id="uppercase">
+                    <label for="uppercase">UpperCase</label>
+                    <br>
+                    <input type="checkbox" name="numbers" id="numbers">
+                    <label for="numbers">Numbers</label>
+                    <br>
+                    <input type="checkbox" name="special" id="special">
+                    <label for="special">Special Characters</label>
+                    <br>
+
+                    <input type="submit" class="btn btn-primary" value="Generate Password">
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+
+</body>
+</html>
